@@ -11,6 +11,13 @@
 		E8BA6DD62C52665E003CE61F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DD52C52665E003CE61F /* ContentView.swift */; };
 		E8BA6DD82C526660003CE61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BA6DD72C526660003CE61F /* Assets.xcassets */; };
 		E8BA6DDB2C526660003CE61F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BA6DDA2C526660003CE61F /* Preview Assets.xcassets */; };
+		E8BA6DE22C526887003CE61F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DE12C526887003CE61F /* User.swift */; };
+		E8BA6DE42C526911003CE61F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DE32C526911003CE61F /* Friend.swift */; };
+		E8BA6DE62C526EFF003CE61F /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DE52C526EFF003CE61F /* UserDetailsView.swift */; };
+		E8BA6DEA2C52705E003CE61F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DE92C52705E003CE61F /* StatusIndicator.swift */; };
+		E8BA6DEC2C527992003CE61F /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DEB2C527992003CE61F /* Divider.swift */; };
+		E8BA6DEE2C527A5D003CE61F /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DED2C527A5D003CE61F /* TagView.swift */; };
+		E8BA6DF22C53B794003CE61F /* UserListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA6DF12C53B794003CE61F /* UserListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		E8BA6DD52C52665E003CE61F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8BA6DD72C526660003CE61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8BA6DDA2C526660003CE61F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8BA6DE12C526887003CE61F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E8BA6DE32C526911003CE61F /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		E8BA6DE52C526EFF003CE61F /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		E8BA6DE92C52705E003CE61F /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		E8BA6DEB2C527992003CE61F /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
+		E8BA6DED2C527A5D003CE61F /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		E8BA6DF12C53B794003CE61F /* UserListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,13 @@
 			children = (
 				E8BA6DD32C52665E003CE61F /* Day60ChallengeApp.swift */,
 				E8BA6DD52C52665E003CE61F /* ContentView.swift */,
+				E8BA6DF12C53B794003CE61F /* UserListRow.swift */,
+				E8BA6DE92C52705E003CE61F /* StatusIndicator.swift */,
+				E8BA6DE52C526EFF003CE61F /* UserDetailsView.swift */,
+				E8BA6DED2C527A5D003CE61F /* TagView.swift */,
+				E8BA6DEB2C527992003CE61F /* Divider.swift */,
+				E8BA6DE12C526887003CE61F /* User.swift */,
+				E8BA6DE32C526911003CE61F /* Friend.swift */,
 				E8BA6DD72C526660003CE61F /* Assets.xcassets */,
 				E8BA6DD92C526660003CE61F /* Preview Content */,
 			);
@@ -137,8 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BA6DE62C526EFF003CE61F /* UserDetailsView.swift in Sources */,
 				E8BA6DD62C52665E003CE61F /* ContentView.swift in Sources */,
 				E8BA6DD42C52665E003CE61F /* Day60ChallengeApp.swift in Sources */,
+				E8BA6DEC2C527992003CE61F /* Divider.swift in Sources */,
+				E8BA6DEA2C52705E003CE61F /* StatusIndicator.swift in Sources */,
+				E8BA6DE22C526887003CE61F /* User.swift in Sources */,
+				E8BA6DF22C53B794003CE61F /* UserListRow.swift in Sources */,
+				E8BA6DE42C526911003CE61F /* Friend.swift in Sources */,
+				E8BA6DEE2C527A5D003CE61F /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
