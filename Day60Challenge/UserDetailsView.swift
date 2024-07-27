@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UserDetailsView: View {
     var user: User
@@ -51,13 +52,23 @@ struct UserDetailsView: View {
 }
 
 #Preview {
-    let isoDate = "2015-11-10T01:47:18-00:00"
-    let dateFormatter = ISO8601DateFormatter()
-    let date = dateFormatter.date(from: isoDate)!
-    
-    var f1 = Friend(id: "1", name: "Vicky")
-    var f2 = Friend(id: "2", name: "Monty")
-    var f3 = Friend(id: "3", name: "Emmett")
-    
-    return UserDetailsView(user: User(id: "1", isActive: true, name: "Ayrton", age: 30, email: "ap@gmail.com", address: "10 Nowhere St", about: "Likes stuff", registered: date, tags: ["Cool", "Awesome"], friends: [f1, f2, f3]))
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: User.self, Friend.self, configurations: config)
+        
+        let isoDate = "2015-11-10T01:47:18-00:00"
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from: isoDate)!
+        
+        let f1 = Friend(id: "1", name: "Vicky")
+        let f2 = Friend(id: "2", name: "Monty")
+        let f3 = Friend(id: "3", name: "Emmett")
+        
+        let user = User(id: "1", isActive: true, name: "Ayrton", age: 30, email: "ap@gmail.com", address: "10 Nowhere St", about: "Likes stuff", registered: date, tags: ["Cool", "Awesome"], friends: [])
+        
+        return UserDetailsView(user: user)
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create container: \(error.localizedDescription)")
+    }
 }

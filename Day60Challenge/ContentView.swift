@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @State private var users = [User]()
+    @Environment(\.modelContext) var modelContext
+    @Query var users: [User]
     
     var body: some View {
         NavigationStack {
@@ -29,6 +31,7 @@ struct ContentView: View {
     
     func fetchUserData() async {
         if !users.isEmpty {
+            print("Already have users")
             return
         }
         
@@ -38,14 +41,21 @@ struct ContentView: View {
         }
         
         do {
+            print("Getting users from interweb")
+            
             let (data, _) = try await URLSession.shared.data(from: url)
             
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
+            let insertContext = ModelContext(modelContext.container)
             
             if let decodedResponse = try? decoder.decode([User].self, from: data) {
-                users = decodedResponse
+                for user in decodedResponse {
+                    insertContext.insert(user)
+                }
             }
+            
+            try insertContext.save()
         } catch {
             print("Invalid data")
         }
@@ -53,5 +63,13 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: User.self, configurations: config)
+    
+        return ContentView()
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create container: \(error.localizedDescription)")
+    }
 }
